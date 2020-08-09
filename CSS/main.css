@@ -1,0 +1,60 @@
+/*body {
+    font-family: "Times New Roman", sans-serif;
+    background-color: goldenrod;
+}
+#navbar {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: aqua;
+    padding: 32px;
+}
+header {
+    background-color: aliceblue;
+    height:150px;
+    padding:4px;
+}
+header h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    line-height:50px;
+}
+header h2 {
+    font-variant:small-caps;
+    text-align:center;
+    color:#fff;
+}
+.main_menu {
+    padding: 5px 0 5px 0;
+    text-align:center;
+    line-height: 32px;
+    background-color: aqua;
+}
+ul.main_menu {
+    margin-top: 15px;
+}
+.main_menu li {
+    display: inline;
+    padding: 0 10px 0 10px;
+    font-size:20px;
+}
+.main_menu a {
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+    font-variant: small-caps;
+}
+.main_menu a:hover {
+    color: aliceblue;
+}
+.done-button {
+    display: inline-block;
+    font-size: .8em;
+    background-color: grey;
+    padding: 3px 6px;
+    border: 0;
+    opacity: 0.4;
+}
+.items li,
+.item-add .input {
+}
