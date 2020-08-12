@@ -1,12 +1,23 @@
 <?php
 
-
 namespace Project\Models;
 
+use Illuminate\Database\Eloquent\Model;
 
-class QuizModel
+/**
+ * @property int $id
+ * @property string $name
+ *
+ * @property QuestionModel[] $questions
+ */
+class QuizModel extends Model
 {
-    public int $id;
+    protected $table = 'quizzes';
+    public $timestamps = false;
+    protected $guarded = [];
 
-    public string $name;
+    public function questions()
+    {
+        return $this->hasMany(QuestionModel::class, 'quiz_id','id' );
+    }
 }

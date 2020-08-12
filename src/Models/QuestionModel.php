@@ -4,11 +4,24 @@
 namespace Project\Models;
 
 
-class QuestionModel
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+/**
+ * @property int $id
+ * @property int $quiz_id
+ * @property int $title
+ *
+ * @property QuizModel $quiz
+ */
+class QuestionModel extends Model
 {
-    public int $id;
+    protected $table = 'questions';
+    public $timestamps = false;
+    protected $guarded = [];
 
-    public int $quizId;
-
-    public string $title; //title=question
+    public function quiz(): BelongsTo
+    {
+        return $this->belongsTo(QuizModel::class);
+    }
 }

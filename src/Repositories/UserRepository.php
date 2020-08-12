@@ -4,6 +4,8 @@
 namespace Project\Repositories;
 
 
+use Project\Models\UserModel;
+
 class UserRepository
 {
     public function addUser(string $email, string $name): UserModel
@@ -16,5 +18,3 @@ class UserRepository
         return null;
     }
 }
-//quizrep
-//question repo
