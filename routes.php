@@ -4,5 +4,8 @@ use Project\Controllers\IndexController;
 
 return [
     '/' =>new Route(\Project\Controllers\IndexController::class, 'index'),
-    '/auth/login' =>new Route(\Project\Controllers\AuthController::class, 'login'),
+    '/login' =>new Route(\Project\Controllers\AuthController::class, 'login'),
+    '/register' =>new Route(\Project\Controllers\AuthController::class, 'register'),
+    '/logout' =>new Route(\Project\Controllers\AuthController::class, 'logout'),
+
 ];

@@ -3,7 +3,11 @@
 use Dotenv\Dotenv;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-Dotenv::createImmutable(dirname(__DIR__))->load();
+defined('PROJECT_ROOT') or DEFINE('PROJECT_ROOT', dirname(__DIR__));
+defined('PROJECT_VIEW_DIR') or define('PROJECT_VIEW_DIR', PROJECT_ROOT . '/resources/views');
+defined('PROJECT_LAYOUT_DIR') or define('PROJECT_LAYOUT_DIR', PROJECT_ROOT . '/resources/layouts');
+
+Dotenv::createImmutable(PROJECT_ROOT)->load();
 
 $capsule = new Capsule();
 $capsule->addConnection(

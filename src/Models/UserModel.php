@@ -11,7 +11,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $id
  * @property string $name
  * @property string $email
- * @package Project/Models
+ * @property string $password
+ * @property string $created_at
+ * @property string updated_at
+ *
  * @property UserQuizAttemptModel[] $quizAttempts
  */
 

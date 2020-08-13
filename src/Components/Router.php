@@ -30,6 +30,9 @@ class Router
             throw new Exception("Action '{$route->getAction()}' not found in '{$route->getControllerClass()}'");
         }
 
-        echo call_user_func([$route->getControllerClass(), $route->getAction()]);
+        $controllerClass = $route->getControllerClass();
+        $controller = new $controllerClass();
+
+        echo call_user_func([$controller, $route->getAction()]);
     }
 }
