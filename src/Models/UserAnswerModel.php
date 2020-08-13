@@ -4,13 +4,23 @@
 namespace Project\Models;
 
 
-class UserAnswerModel
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class UserAnswerModel
+ * @property int $id
+ * @property int $userId
+ * @property int $question_id
+ * @property int $answer_id
+ */
+class UserAnswerModel extends Model
 {
-    public int $id;
+    protected $table = 'user_answers';
+    public $timestamps = false;
+    protected $guarded = [];
 
-    public int $userId;
-
-    public int $questionId;
-
-    public int $answerId;
+    public function answer()
+    {
+        return $this->hasOne(AnswerModel::class, 'answer_id', 'id');
+    }
 }
