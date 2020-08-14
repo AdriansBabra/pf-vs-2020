@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property int $id
  * @property string $name
+ * @property bool $is_admin
  * @property string $email
  * @property string $password
  * @property string $created_at

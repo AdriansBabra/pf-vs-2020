@@ -1,11 +1,17 @@
 <?php
 
 /**
+ * @var string $error;
  * @var View $this;
  */
 
 $this->title = 'Login'
 ?>
+<?php if ($error): ?>
+    <div class="alert alert-danger" role="alert">
+        <?= $error ?>
+    </div>
+<?php endif; ?>
 
 <form action="/login" method="post">
     <div class="form-group">
@@ -17,5 +23,5 @@ $this->title = 'Login'
         <label for="exampleInputPassword1">Password</label>
         <input type="password" name="password" class="form-control" id="exampleInputPassword1">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
