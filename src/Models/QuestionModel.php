@@ -4,7 +4,6 @@
 namespace Project\Models;
 
 
-use http\Client\Curl\User;
 use Illuminate\Database\Eloquent\Concerns\HasAttributes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

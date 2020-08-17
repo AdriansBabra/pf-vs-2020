@@ -28,8 +28,10 @@ class AuthController extends Controller
         if (ActiveUser::isLoggedIn()) {
             return $this->redirect('/dashboard');
         }
+
         $loginItem = UserLoginItem::fromArray($_POST);
         $error = "";
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 $this->userService->signIn($loginItem);

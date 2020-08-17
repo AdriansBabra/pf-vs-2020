@@ -2,6 +2,7 @@
 
 use Dotenv\Dotenv;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Project\Components\Session;
 
 defined('PROJECT_ROOT') or DEFINE('PROJECT_ROOT', dirname(__DIR__));
 defined('PROJECT_VIEW_DIR') or define('PROJECT_VIEW_DIR', PROJECT_ROOT . '/resources/views');
@@ -10,6 +11,10 @@ defined('PROJECT_LAYOUT_DIR') or define('PROJECT_LAYOUT_DIR', PROJECT_ROOT . '/r
 Dotenv::createImmutable(PROJECT_ROOT)->load();
 
 session_start();
+
+Session::getInstance()->generateCsrf();
+
+
 $capsule = new Capsule();
 $capsule->addConnection(
     [

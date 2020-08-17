@@ -1,6 +1,8 @@
 <?php
 use Project\Components\ActiveUser;
+use Project\Components\Session;
 use Project\Components\View;
+
 /**
  * @var View $this
  */
@@ -11,6 +13,7 @@ use Project\Components\View;
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
           crossorigin="anonymous"
     >
+    <link rel="stylesheet" href="/assets/app.css"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,6 +44,7 @@ use Project\Components\View;
                     <a class="nav-link" href="/logout" href="/logout" onclick="onLogoutClicked();window.alert('logout')">Logout</a>
                 </li>
                 <form id="js--logout-form" action="/logout" method="post">
+                    <input type="hidden" name="csrf" value="<?= e(Session::getInstance()->getCsrf()) ?>">
                 </form>
             <?php else: ?>
                 <li class="nav-item">
@@ -62,4 +66,5 @@ use Project\Components\View;
         document.getElementById('js--logout-form').submit();
     }
 </script>
+<script src="/assets/script.js"></script>
 </body>
