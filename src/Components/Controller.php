@@ -8,7 +8,7 @@ abstract class Controller
 {
     public function view(string $name, array $data = []): ?string
     {
-        //TODO: Izveidos jaunu view klasi, saliks datus, izvadís atgriezís skatu
+        //Izveidos jaunu view klasi, saliks datus, izvadís atgriezís skatu
 
         return (new View($name, $data))->render();
     }

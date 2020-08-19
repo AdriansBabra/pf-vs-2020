@@ -1,5 +1,6 @@
 <?php
 
+use Project\Components\Session;
 use Project\Components\View;
 use Project\Structures\UserRegisterItem;
 
@@ -23,10 +24,11 @@ $this->title = 'Register'
 <?php endif; ?>
 
 <form action="/register" method="post">
+    <input type="hidden" name="csrf" value="<?= e(Session::getInstance()->getCsrf()); ?>">
     <div class="form-group">
         <label for="inputName">Name</label>
         <input type="name" name="name" class="form-control" id="inputName"
-               value="<?= htmlspecialchars($registerItem->name); ?>">
+               value="<?= e($registerItem->name); ?>">
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -35,7 +37,7 @@ $this->title = 'Register'
                class="form-control"
                id="exampleInputEmail1"
                aria-describedby="emailHelp"
-               value="<?= htmlspecialchars($registerItem->email); ?>">
+               value="<?= e($registerItem->email); ?>">
         <small id="emailHelp" class="form-text text-muted">We will always share your email with anyone else.</small>
     </div>
     <div class="form-group">

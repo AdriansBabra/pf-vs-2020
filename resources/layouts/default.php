@@ -9,11 +9,15 @@ use Project\Components\View;
 ?>
 <head>
     <title><?= $this->title ?></title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
           crossorigin="anonymous"
     >
     <link rel="stylesheet" href="/assets/app.css"/>
+    <script>
+        window.csrf = "<?= Session::getInstance()->getCsrf(); ?>";
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -57,7 +61,17 @@ use Project\Components\View;
         </ul>
     </div>
 </nav>
-<div class="container">
+<div id="app" class="container">
+    <?php if (Session::getInstance()->hasSuccessMessage()): ?>
+        <div class="alert alert-success">
+            <?= e(Session::getInstance()->getSuccessMessage()) ?>
+        </div>
+    <?php endif; ?>
+    <?php if (Session::getInstance()->hasErrorMessage()): ?>
+        <div class="alert alert-danger">
+            <?= e(Session::getInstance()->getErrorMessage()) ?>
+        </div>
+    <?php endif; ?>
     <?= $this->content ?>
 </div>
 <script>

@@ -16,7 +16,7 @@ $this->title = 'Login'
 <?php endif; ?>
 
 <form action="/login" method="post">
-    <input type="text" name="csrf" value="<?= e(Session::getInstance()->getCsrf()) ?>">
+    <input type="hidden" name="csrf" value="<?= e(Session::getInstance()->getCsrf()) ?>">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

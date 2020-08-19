@@ -14,7 +14,6 @@ session_start();
 
 Session::getInstance()->generateCsrf();
 
-
 $capsule = new Capsule();
 $capsule->addConnection(
     [

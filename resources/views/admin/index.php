@@ -22,6 +22,7 @@ $this->title = 'Admin panel';
         <th>Email</th>
         <th>Name</th>
         <th>Joined at</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -31,6 +32,11 @@ $this->title = 'Admin panel';
             <td><?= e($user->email); ?></td>
             <td><?= e($user->name); ?></td>
             <td><?= $user->created_at; ?></td>
+            <td>
+                <a class="btn btn-sm btn-success" href="/admin/view-user?id=<?= urlencode($user->id); ?>">
+                    View
+                </a>
+            </td>
         </tr>
     <?php endforeach; ?>
     </tbody>
