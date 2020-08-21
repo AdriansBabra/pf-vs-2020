@@ -10,10 +10,6 @@ use Project\Components\View;
 <head>
     <title><?= $this->title ?></title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-          crossorigin="anonymous"
-    >
     <link rel="stylesheet" href="/assets/app.css"/>
     <script>
         window.csrf = "<?= Session::getInstance()->getCsrf(); ?>";
@@ -61,6 +57,14 @@ use Project\Components\View;
         </ul>
     </div>
 </nav>
+
+<?php if((bool)Session::getInstance()->get(Session::KEY_CURRENT_ATTEMPT_ID)): ?>
+<div class="alert alert-warning">
+    <b>QUIZ IN PROGRESS!!!!</b><br/>
+    Attempt ID: <?= Session::getInstance()->get(Session::KEY_CURRENT_ATTEMPT_ID) ?><br/>
+    Questions answered: <?= Session::getInstance()->get(Session::KEY_QUESTIONS_ANSWERED) ?>
+</div>
+<?php endif; ?>
 <div id="app" class="container">
     <?php if (Session::getInstance()->hasSuccessMessage()): ?>
         <div class="alert alert-success">
@@ -74,6 +78,14 @@ use Project\Components\View;
     <?php endif; ?>
     <?= $this->content ?>
 </div>
+<!--<div class="cookie-banner">
+    <div class="cookie-banner__text">
+            <span>
+                Agree to cookies!  Read more here: <a class="cookie-banner__text--link" href="/policy">Policy</a>
+            </span>
+    </div>
+    <div class="cookie-banner__button">No!</div>
+</div>--!>
 <script>
     function onLogoutClicked() {
         event.preventDefault();

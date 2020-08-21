@@ -15,6 +15,7 @@ $this->title = 'Login'
     </div>
 <?php endif; ?>
 
+<link rel="stylesheet" href="/assets/app.css"/>
 <form action="/login" method="post">
     <input type="hidden" name="csrf" value="<?= e(Session::getInstance()->getCsrf()) ?>">
     <div class="form-group">

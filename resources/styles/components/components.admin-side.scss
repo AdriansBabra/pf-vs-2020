@@ -1,0 +1,60 @@
+.admin{
+  margin-top: 5rem;
+}
+.admin-sidenav {
+  margin-top: 5rem;
+  height: 60%;
+  width: 15vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $color-dark;
+  overflow-x: hidden;
+  padding-top: 20px;
+  &__select{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: $color-white;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    outline: none;
+    margin-bottom: 2rem;
+    &:after{
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $color-white;
+      transition: width .3s;
+    }
+    &:hover:after{
+      width: 65%;
+      transition: width .3s;
+    }
+    &--admin{
+      font-size: 3rem;
+    }
+  }
+  &__separator{
+    background-color: rgba(255,255,255, .5);
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    width: 20rem;
+    height: 1px;
+  }
+}
+.admin-content{
+  margin-top: 1rem;
+  display: flex;
+  text-align: center;
+  width: 85vw;
+  height: 100vh;
+  position: absolute;
+  right: 0px;
+  justify-content: center;
+}

@@ -27,4 +27,5 @@ class ActiveUser
         /** @noinspection PhpIncompatibleReturnTypeInspection */
         return UserModel::query()->where('id', '=', $userId)->first();
     }
+
 }

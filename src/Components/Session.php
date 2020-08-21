@@ -17,6 +17,10 @@ class Session
 
     public const KEY_ERROR_MESSAGE = 'error_message';
 
+    public const KEY_CURRENT_ATTEMPT_ID = 'attempt_id';
+
+    public const KEY_QUESTIONS_ANSWERED = 'questions_answered';
+
     public static function getInstance(): Session
     {
         if (!self::$instance) {

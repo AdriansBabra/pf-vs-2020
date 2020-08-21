@@ -3,6 +3,7 @@
 use Dotenv\Dotenv;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Project\Components\Session;
+require_once __DIR__ . '/../vendor/autoload.php';
 
 defined('PROJECT_ROOT') or DEFINE('PROJECT_ROOT', dirname(__DIR__));
 defined('PROJECT_VIEW_DIR') or define('PROJECT_VIEW_DIR', PROJECT_ROOT . '/resources/views');

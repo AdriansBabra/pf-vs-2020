@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property int $id
  * @property int $quiz_id
- * @property int $title
+ * @property string $title
  *
  * @property QuizModel $quiz
  * @property AnswerModel[] $answers

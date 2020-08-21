@@ -14,6 +14,13 @@ return [
     '/admin' => new Route(\Project\Controllers\AdminController::class, 'index'),
     '/admin/toggle-user-admin' => new Route(AdminController::class, 'toggleUserAdmin', [Route::METHOD_POST]),
     '/admin/delete-user' => new Route(AdminController::class, 'deleteUser', [Route::METHOD_POST]),
+    '/admin/delete-quiz' => new Route(AdminController::class, 'deleteQuiz', [Route::METHOD_POST]),
     '/admin/view-user' => new Route(AdminController::class, 'viewUser'),
-    '/quiz-rpc/get-all' => new Route(QuizRpcController::class, 'getAll')
+    '/admin/view-quiz' => new Route(AdminController::class, 'viewQuiz'),
+    '/admin/view-attempt' => new Route(AdminController::class, 'viewAttempt'),
+    '/quiz-rpc/get-all' => new Route(QuizRpcController::class, 'getAll'),
+    '/quiz-rpc/start' => new Route(QuizRpcController::class, 'startQuiz'),
+    '/quiz-rpc/get-question' => new Route(QuizRpcController::class, 'getQuestion'),
+    '/quiz-rpc/save-answer' => new Route(QuizRpcController::class, 'saveAnswer'),
+    '/quiz-rpc/get-results' => new Route(QuizRpcController::class, 'getResults'),
 ];

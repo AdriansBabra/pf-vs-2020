@@ -1,5 +1,6 @@
 <?php
 
+use Project\Components\Session;
 use Project\Components\View;
 use Project\Models\UserModel;
 
@@ -10,8 +11,11 @@ use Project\Models\UserModel;
 
 $this->title = 'Dashboard';
 // e = htmlspecialchars
-?>
-
-<h1>Welcome to Dashboard, <?= e($user->name); ?></h1>
-
-<quiz-main :user-name="'<?= e($user->name); ?>'"></quiz-main>
+$isQuizActive = (bool)Session::getInstance()->get(Session::KEY_CURRENT_ATTEMPT_ID);
+?>;
+<h1 class="text welcome center">Welcome to Dashboard, <?= e($user->name); ?></h1>
+<?php if ($isQuizActive): ?>
+<?php endif; ?>
+<br/>
+<quiz-main :user-name="'<?= e($user->name); ?>'" :p-is-quiz-active="<?= json_encode($isQuizActive); ?>">
+</quiz-main>

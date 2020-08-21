@@ -6,10 +6,6 @@ use Project\Components\View;
  * @var View $this
  */
 
-echo "Hello World!";
-
-$this->title = 'Index Page';
+$this->title = 'Main Quiz page';
 
 ?>
-
-Index page
